@@ -1,37 +1,84 @@
-# Учебный каталог на Bootstrap 5
+# Контрольная работа №2: Учебный каталог на Bootstrap 5
 
-Этот одностраничный пример продолжает предыдущий учебный проект HTML/CSS: сохранены «Учебный каталог», hero «Компоненты для рабочего пространства», три товара, состояния кнопок, сравнительная таблица и форма заявки. Те же блоки реализованы Bootstrap Grid и готовыми компонентами Bootstrap 5.
+Тема: «CSS-фреймворки: разработка интерфейса на Bootstrap или альтернативном CSS-фреймворке».
 
-Проект демонстрирует:
+## Описание проекта
 
-- Bootstrap Navbar с мобильным toggler;
-- mobile-first сетку `container → row → col-*` как основу layout;
-- компоненты Card, Buttons, Badge, Alert, Table, Form и Modal;
-- интерактивное поведение через `data-bs-*` и Bootstrap JS Bundle;
-- адаптивное перестроение карточек: одна колонка на mobile, две на tablet, три на desktop.
+Многостраничный сайт учебного интернет-магазина (каталога товаров), разработанный с использованием CSS-фреймворка **Bootstrap 5**. 
 
-Utilities используются только минимально для gutters, интервалов и штатной формы; они не заменяют Grid или структуру компонентов. Собственного CSS и custom JavaScript нет. Проект не является готовой контрольной работой или законченным интернет-магазином.
+Проект является отдельной реализацией предметной области. Он выполнен в новом репозитории и не является прямым продолжением кода Контрольной работы №1 (HTML/CSS).
 
-## Запуск
+## Используемый фреймворк и способ подключения
 
-Откройте `index.html` в современном браузере. Интернет не требуется: Bootstrap CSS и JS Bundle находятся в `vendor/bootstrap/`.
+- **Фреймворк:** Bootstrap v5.3.8.
+- **Способ подключения:** Локальный (файлы находятся в папке `vendor/bootstrap/`). 
+- **CDN не используется.** Это обеспечивает работу сайта без подключения к интернету (выполнено дополнительное задание из методических указаний).
 
-Для проверки изменяйте ширину окна, открывайте mobile navbar и modal «Оставить заявку».
-
-## Структура
+## Структура проекта
 
 ```text
-index.html
-vendor/bootstrap/css/bootstrap.min.css
-vendor/bootstrap/js/bootstrap.bundle.min.js
+kr2-bootstrap-shop/
+├── css/
+│   └── custom.css          — кастомные стили поверх Bootstrap
+├── vendor/
+│   └── bootstrap/
+│       ├── css/
+│       │   └── bootstrap.min.css
+│       └── js/
+│           └── bootstrap.bundle.min.js
+├── index.html              — Главная страница
+├── catalog.html            — Каталог товаров
+├── product.html            — Страница товара
+├── order.html              — Форма заявки
+├── contacts.html           — Контакты
+└── README.md               — Описание проекта
+
 ```
 
-## Bootstrap
+## Реализованные страницы
 
-- Version: `5.3.8`.
-- Official source: `https://getbootstrap.com/docs/5.3/getting-started/download/`.
-- Official compiled distribution: `https://github.com/twbs/bootstrap/releases/download/v5.3.8/bootstrap-5.3.8-dist.zip`.
-- Retrieved: `2026-10-12`.
-- Runtime: local/offline; CDN и jQuery не используются.
-- `bootstrap.min.css` SHA-256: `d85327d99c7a3ee1f9b5d0500d1370acea3ad2db39c163c2f51f232baedbdede`.
-- `bootstrap.bundle.min.js` SHA-256: `e4fd49181388c48ec5040bd3fe66f57c29c8e67fcd8502b3354b96ec7ab47cc7`.
+1. **Главная (`index.html`)** — навигация, hero-блок, карточки популярных товаров, модальное окно.
+2. **Каталог (`catalog.html`)** — сетка карточек с бейджами, боковой блок фильтров (статический), хлебные крошки, модальное окно заявки.
+3. **Товар (`product.html`)** — блок с описанием товара, заглушка изображения, таблица характеристик (`table-responsive`), хлебные крошки.
+4. **Заявка (`order.html`)** — форма с различными элементами ввода, карточка с заголовком.
+5. **Контакты (`contacts.html`)** — контактная информация и заглушка карты.
+
+## Использованные компоненты Bootstrap
+
+В проекте задействованы следующие компоненты и классы фреймворка:
+
+- **Навигация (Navbar):** `navbar`, `navbar-expand-md`, `navbar-dark`, `bg-dark`, `collapse`, `navbar-toggler`.
+- **Сетка (Grid):** `container`, `row`, `col-12`, `col-md-6`, `col-lg-4`, `col-xl-3`, `g-4` (обеспечивает полную адаптивность).
+- **Карточки (Card):** `card`, `card-body`, `card-title`, `card-text`, `h-100`.
+- **Кнопки (Buttons):** `btn`, `btn-primary`, `btn-outline-primary`, `btn-outline-secondary`, `btn-sm`, `btn-lg`, `disabled`.
+- **Значки (Badges):** `badge`, `text-bg-success`, `text-bg-warning`, `text-bg-danger`.
+- **Сообщения (Alerts):** `alert`, `alert-info`, `alert-warning`, `role="alert"`.
+- **Модальное окно (Modal):** `modal`, `modal-dialog`, `modal-content`, `modal-header`, `modal-footer`, атрибуты `data-bs-toggle`, `data-bs-target`, `data-bs-dismiss`.
+- **Формы (Forms):** `form-control`, `form-select`, `form-check`, `form-check-input`, `input-group`, `input-group-text`.
+- **Таблицы (Table):** `table`, `table-striped`, `table-hover`, `table-responsive`.
+- **Навигационная цепочка (Breadcrumb):** `breadcrumb`, `breadcrumb-item`.
+- **Utility-классы:** `d-flex`, `justify-content-between`, `align-items-center`, `gap-*`, `mb-*`, `mt-*`, `py-*`, `text-muted`, `shadow-sm`, `border-0`.
+
+## Самостоятельные доработки (для повышенного балла)
+
+1. **Локальное подключение Bootstrap:** Фреймворк размещён в папке `vendor/`, что демонстрирует умение работать с зависимостями без CDN.
+2. **Собственный файл `css/custom.css`:** 
+   - Добавлены плавные анимации при наведении на карточки (`transform: translateY`, `box-shadow`).
+   - Реализовано прижатие подвала к низу страницы с помощью `flex-direction: column` и `min-height: 100vh`.
+   - Добавлены стили для заглушек изображений (`placeholder-image`).
+3. **Расширение структуры:** Проект включает 5 полноценных страниц (вместо базовой одной), объединённых единой навигацией.
+4. **Компонентная насыщенность:** Помимо обязательных `navbar`, `card`, `modal` и `alert`, добавлены `breadcrumb`, `input-group`, `table-responsive`, `form-check`.
+
+## Как запустить проект
+
+1. Откройте файл `index.html` в любом современном браузере.
+2. Интернет не требуется, так как все стили и скрипты Bootstrap подключены локально из папки `vendor/`.
+3. Для проверки адаптивности откройте DevTools (F12) и включите режим эмуляции мобильных устройств (ширины 375px, 768px, 1024px).
+
+## Автор
+
+- **ФИО:** Кутлунин Константин Русланович
+- **Группа:** ЭФБО-15-25
+- **Дисциплина:** Фронтенд и бэкенд разработка
+- **Семестр:** 3
+```
