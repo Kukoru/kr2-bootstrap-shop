@@ -101,6 +101,53 @@
         </table>
       </div>
     </section>
+
+    <!-- Дополнительный компонент: Accordion -->
+    <section class="mt-5 mb-4">
+      <h2 class="h4 mb-3">Частые вопросы</h2>
+      <div class="accordion" id="faqAccordion">
+        
+        <div class="accordion-item">
+          <h3 class="accordion-header">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1" aria-expanded="true" aria-controls="faq1">
+              Как оформить заказ?
+            </button>
+          </h3>
+          <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              Нажмите кнопку <strong>«Заказать»</strong> в карточке товара, заполните форму и мы свяжемся с вами.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h3 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2" aria-expanded="false" aria-controls="faq2">
+              Есть ли доставка?
+            </button>
+          </h3>
+          <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              Да, доставка по городу осуществляется бесплатно при заказе от 3000 рублей.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h3 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3" aria-expanded="false" aria-controls="faq3">
+              Можно ли вернуть товар?
+            </button>
+          </h3>
+          <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              Да, в течение 14 дней с момента получения при сохранении упаковки.
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
   </main>
 
   <!-- Подвал -->

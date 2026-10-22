@@ -58,6 +58,7 @@ kr2-bootstrap-shop/
 - **Таблицы (Table):** `table`, `table-striped`, `table-hover`, `table-responsive`.
 - **Навигационная цепочка (Breadcrumb):** `breadcrumb`, `breadcrumb-item`.
 - **Utility-классы:** `d-flex`, `justify-content-between`, `align-items-center`, `gap-*`, `mb-*`, `mt-*`, `py-*`, `text-muted`, `shadow-sm`, `border-0`.
+- **Аккордеон (Accordion):** `accordion`, `accordion-item`, `accordion-button`, `accordion-collapse`, `accordion-body`.
 
 ## Самостоятельные доработки (для повышенного балла)
 
