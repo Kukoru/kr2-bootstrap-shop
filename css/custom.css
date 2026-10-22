@@ -1,0 +1,30 @@
+/* Кастомные стили поверх Bootstrap */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+/* Эффект карточек */
+.card {
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+}
+
+/* Чуть уменьшим бейджи */
+.badge {
+  font-size: 0.8em;
+}
+
+/* Заглушка для фото товара */
+.placeholder-image {
+  min-height: 320px;
+}

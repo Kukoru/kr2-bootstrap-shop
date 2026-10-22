@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Форма заявки учебного магазина на Bootstrap">
+  <title>Заявка — Учебный магазин на Bootstrap</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/custom.css">
+</head>
+<body class="bg-light">
+
+  <!-- Шапка (единая) -->
+  <header>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark" aria-label="Основная навигация">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">Учебный каталог</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavigation" aria-controls="mainNavigation" aria-expanded="false" aria-label="Открыть навигацию">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="mainNavigation">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="index.html">Главная</a></li>
+            <li class="nav-item"><a class="nav-link" href="catalog.html">Каталог</a></li>
+            <li class="nav-item"><a class="nav-link" href="product.html">Товар</a></li>
+            <li class="nav-item"><a class="nav-link active" aria-current="page" href="order.html">Заявка</a></li>
+            <li class="nav-item"><a class="nav-link" href="contacts.html">Контакты</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container my-5">
+    <div class="row justify-content-center">
+      <div class="col-12 col-lg-8">
+        
+        <!-- Карточка с формой -->
+        <div class="card shadow-sm border-0">
+          <div class="card-header bg-primary text-white py-3">
+            <h1 class="h4 mb-0">Форма заявки</h1>
+          </div>
+          <div class="card-body p-4">
+            
+            <div class="alert alert-info" role="alert">
+              Заполните форму. Поля со звёздочкой являются обязательными.
+            </div>
+
+            <form>
+              <div class="row g-3">
+                <!-- Имя -->
+                <div class="col-12 col-md-6">
+                  <label for="order-name" class="form-label">Имя *</label>
+                  <input id="order-name" name="name" type="text" class="form-control" required>
+                </div>
+
+                <!-- E-mail -->
+                <div class="col-12 col-md-6">
+                  <label for="order-email" class="form-label">E-mail *</label>
+                  <input id="order-email" name="email" type="email" class="form-control" required>
+                </div>
+
+                <!-- Телефон (Input Group) -->
+                <div class="col-12 col-md-6">
+                  <label for="order-phone" class="form-label">Телефон</label>
+                  <div class="input-group">
+                    <span class="input-group-text">+7</span>
+                    <input id="order-phone" name="phone" type="tel" class="form-control" placeholder="900 000-00-00">
+                  </div>
+                </div>
+
+                <!-- Выбор товара (Form Select) -->
+                <div class="col-12 col-md-6">
+                  <label for="order-product" class="form-label">Товар</label>
+                  <select id="order-product" name="product" class="form-select">
+                    <option selected>Выберите товар</option>
+                    <option value="lamp">Настольная лампа</option>
+                    <option value="stand">Подставка для книг</option>
+                    <option value="organizer">Органайзер</option>
+                  </select>
+                </div>
+
+                <!-- Комментарий -->
+                <div class="col-12">
+                  <label for="order-comment" class="form-label">Комментарий</label>
+                  <textarea id="order-comment" name="comment" class="form-control" rows="4"></textarea>
+                </div>
+
+                <!-- Чекбокс (Form Check) -->
+                <div class="col-12">
+                  <div class="form-check">
+                    <input id="order-agree" class="form-check-input" type="checkbox" required>
+                    <label class="form-check-label" for="order-agree">
+                      Я согласен на обработку данных *
+                    </label>
+                  </div>
+                </div>
+
+                <!-- Кнопки -->
+                <div class="col-12 d-flex gap-2 mt-4">
+                  <button class="btn btn-primary px-4" type="submit">Отправить заявку</button>
+                  <button class="btn btn-outline-secondary" type="reset">Очистить</button>
+                </div>
+              </div>
+            </form>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- Подвал -->
+  <footer class="bg-dark text-white py-4 mt-auto">
+    <div class="container text-center">
+      <p class="mb-0">&copy; 2026 Учебный проект. Все права защищены.</p>
+    </div>
+  </footer>
+
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
