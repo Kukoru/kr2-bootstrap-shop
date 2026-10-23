@@ -46,20 +46,18 @@
       <!-- Левая колонка: Фото -->
       <div class="col-12 col-lg-6">
         <div class="card shadow-sm border-0">
-          <div class="placeholder-image bg-light border rounded d-flex align-items-center justify-content-center">
-            <span class="text-muted">Изображение товара</span>
-          </div>
+          <img src="images/product-1.jpg" class="card-img-top" id="product-image" alt="Товар" style="height: 400px; object-fit: cover;">
         </div>
       </div>
 
       <!-- Правая колонка: Описание -->
       <div class="col-12 col-lg-6">
-        <span class="badge text-bg-success mb-3">Новинка</span>
-        <h1 class="h2">Настольная лампа</h1>
+        <span class="badge text-bg-success mb-3" id="product-badge">Новинка</span>
+        <h1 class="h2" id="product-title">Настольная лампа</h1>
         <p class="lead text-muted">
           Подробное описание учебного товара для страницы карточки. Здесь можно разместить основные характеристики и преимущества.
         </p>
-        <p class="fs-3 fw-bold">1000 руб.</p>
+        <p class="fs-3 fw-bold" id="product-price">1000 руб.</p>
         <div class="d-flex gap-2 mb-4">
           <a href="order.html" class="btn btn-primary btn-lg">Оформить заявку</a>
           <a href="catalog.html" class="btn btn-outline-secondary btn-lg">Назад в каталог</a>
@@ -79,15 +77,15 @@
           <tbody>
             <tr>
               <th scope="row" class="w-25">Категория</th>
-              <td>Свет</td>
+              <td id="product-category">Свет</td>
             </tr>
             <tr>
               <th scope="row">Материал</th>
-              <td>Металл, пластик</td>
+              <td id="product-material">Металл, пластик</td>
             </tr>
             <tr>
               <th scope="row">Цвет</th>
-              <td>Белый</td>
+              <td id="product-color">Белый</td>
             </tr>
             <tr>
               <th scope="row">Наличие</th>
@@ -158,5 +156,53 @@
   </footer>
 
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    const productsData = {
+    1: { title: 'Настольная лампа', price: 1000, image: 'images/product-1.jpg', category: 'Свет', material: 'Металл, пластик', color: 'Белый', badge: 'Новинка', badgeColor: 'warning' },
+    2: { title: 'Подставка для книг', price: 1500, image: 'images/product-2.jpg', category: 'Организация', material: 'Дерево', color: 'Коричневый', badge: 'Хит', badgeColor: 'secondary' },
+    3: { title: 'Органайзер', price: 2000, image: 'images/product-3.jpg', category: 'Организация', material: 'Пластик', color: 'Розовый', badge: 'Скидка', badgeColor: 'danger' },
+    4: { title: 'Кофемашина', price: 2500, image: 'images/product-4.jpg', category: 'Электроника', material: 'Металл, стекло', color: 'Серебристо-коричневый', badge: null, badgeColor: '' },
+    5: { title: 'Наушники', price: 3000, image: 'images/product-5.jpg', category: 'Электроника', material: 'Пластик, кожзам', color: 'Черный', badge: null, badgeColor: '' },
+    6: { title: 'Клавиатура', price: 3500, image: 'images/product-6.jpg', category: 'Электроника', material: 'Пластик', color: 'Белый', badge: null, badgeColor: '' }
+    };
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const params = new URLSearchParams(window.location.search);
+    const id = params.get('id') || '1';
+    const product = productsData[id];
+
+    if (product) {
+      // Меняем картинку
+      document.getElementById('product-image').src = product.image;
+      document.getElementById('product-image').alt = product.title;
+      
+      // Меняем заголовок
+      document.getElementById('product-title').textContent = product.title;
+      
+      // Меняем цену
+      document.getElementById('product-price').textContent = `${product.price} руб.`;
+      
+      // Меняем категорию в таблице
+      document.getElementById('product-category').textContent = product.category;
+      
+      // Меняем материал в таблице
+      document.getElementById('product-material').textContent = product.material;
+     
+      // Меняем цвет в таблице
+      document.getElementById('product-color').textContent = product.color;
+
+      // Меняем бейдж
+      const badge = document.getElementById('product-badge');
+
+      if (product.badge) {
+        badge.textContent = product.badge;
+        badge.className = `badge text-bg-${product.badgeColor} mb-3`;
+      } else {
+        badge.style.display = 'none'; // Скрываем, если бейджа нет
+      }
+    }
+  });
+  </script>
 </body>
 </html>
